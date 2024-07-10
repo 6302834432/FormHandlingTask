@@ -1,0 +1,75 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <style>
+        .login-container {
+            width: 580px;
+            height: auto;
+            background: white;
+            margin: auto;
+            padding: 40px 60px;
+            border: 2px solid black;
+        }
+
+        .login-container h1 {
+            margin: 20px 0;
+        }
+
+        .login-fields label {
+            color: black;
+            gap: 50px;
+        }
+
+        .login-fields input,
+        .login-fields textarea {
+            height: 50px;
+            padding-left: 20px;
+            border: 1px solid #c9c9c9;
+            outline: none;
+            color: #5c5c5c;
+            font-size: 18px;
+            width: 100%; /* Added to make input fields stretch across */
+            box-sizing: border-box; /* Added to include padding and border in width */
+        }
+
+        .login-fields textarea {
+            height: 100px; /* Increased height for textarea */
+        }
+
+        .login-container button {
+            width: 100%; /* Adjusted width to match input fields */
+            height: 50px;
+            border: none;
+            color: white;
+            background: red;
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-fields">
+            <form action="/submit" method="POST">
+                <h1>Login</h1>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
